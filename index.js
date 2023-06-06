@@ -1,8 +1,5 @@
-const imgRightBtn = document.querySelector('.arrow-right-btn')
-const imgLeftBtn = document.querySelector('.arrow-left-btn')
 const images = document.querySelectorAll('.img-container > img')
-
-console.log(images, imgLeftBtn)
+const imageBtns = document.querySelectorAll('.dot-container button')
 
 function findNewPicIndex(index, len, direction) {
   if (index === 0 && direction === -1) return len - 1
@@ -16,7 +13,7 @@ function getActiveIndex() {
   return imagesArray.findIndex(image => image.classList.contains('active'))
 }
 
-function setActiveIndex(index) {
+function setActiveImg(index) {
   images.forEach((image, idx) => {
     index === idx
       ? image.classList.add('active')
@@ -24,13 +21,25 @@ function setActiveIndex(index) {
   })
 }
 
+function setActiveBtn(index) {
+  imageBtns.forEach((btn, idx) => {
+    index === idx
+      ? btn.classList.add('active')
+      : btn.classList.remove('active')
+  })
+}
+
 function nextPicture(direction) {
   const pictureIndex = getActiveIndex()
   const newIndex = findNewPicIndex(pictureIndex, images.length, direction)
-  setActiveIndex(newIndex)
+  setActiveImg(newIndex)
+  setActiveBtn(newIndex)
 }
 
 function bindEventListeners() {
+  const imgRightBtn = document.querySelector('.arrow-right-btn')
+  const imgLeftBtn = document.querySelector('.arrow-left-btn')
+
   imgRightBtn.addEventListener("click", () => {
     nextPicture(1)
   })
@@ -38,6 +47,14 @@ function bindEventListeners() {
   imgLeftBtn.addEventListener("click", () => {
     nextPicture(-1)
   })
+
+  imageBtns.forEach((btn, idx) => {
+    btn.addEventListener('click', () => {
+      setActiveImg(idx)
+      setActiveBtn(idx)
+    })
+  })
+  
 }
 
 bindEventListeners()
