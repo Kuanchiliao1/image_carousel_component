@@ -36,7 +36,7 @@ button:active {
   border: solid pink 5px;
   min-width: min-content;
   max-width: 30rem;
-  aspect-ratio: 1;
+  aspect-ratio: 3/2;
   position: relative;
   margin: 0 auto;
 }
@@ -57,16 +57,22 @@ button:active {
   right: 0;
 }
 
-.carousel-container > nav {
-  border: solid pink 5px;
-  width: 4rem;
-  height: 2rem;
+.carousel-container > .dot-container {
   z-index: 10;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
+  margin-bottom: 0;
+  display: flex;
+  gap: .3rem;
+  padding: .4rem;
+  background-color: hsla(0, 0%, 0%, 0.627);
 }
 
-ul {
-  display: flex;
+.dot-container button {
+  border: .5rem white solid;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  padding: 0;
+  cursor: pointer;
 }
