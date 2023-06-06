@@ -3,6 +3,7 @@ html {box-sizing: border-box;}
 
 body {
   margin: 0px;
+  padding-top: 5rem;
 }
 
 img {
@@ -12,6 +13,8 @@ img {
 
 button {
   background-color: hsla(0, 0%, 0%, 0.627);
+  border: none;
+  cursor: pointer;
 }
 
 button:active {
@@ -19,12 +22,12 @@ button:active {
 }
 
 .img-container > * {
+  object-fit: cover;
   display: none;
 }
 
 .img-container > *.active {
   display: block;
-  object-fit: cover;
 }
 
 .img-container {
@@ -33,10 +36,9 @@ button:active {
 }
 
 .carousel-container {
-  border: solid pink 5px;
   min-width: min-content;
   max-width: 30rem;
-  aspect-ratio: 3/2;
+  aspect-ratio: 16/9;
   position: relative;
   margin: 0 auto;
 }
@@ -48,7 +50,6 @@ button:active {
 .carousel-container > .arrow-right-btn,
 .carousel-container > .arrow-left-btn {
   z-index: 10;
-  border: solid pink 5px;
   height: 100%;
   width: 20%;
 }
@@ -62,17 +63,22 @@ button:active {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  margin-bottom: 0;
+  margin-bottom: .2rem;
   display: flex;
   gap: .3rem;
   padding: .4rem;
   background-color: hsla(0, 0%, 0%, 0.627);
+  border-radius: 3px;
 }
 
 .dot-container button {
-  border: .5rem white solid;
+  border: .3rem grey solid;
   border-radius: 50%;
   aspect-ratio: 1;
   padding: 0;
   cursor: pointer;
+}
+
+.dot-container button.active {
+  border-color: white;
 }
