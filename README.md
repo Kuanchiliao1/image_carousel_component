@@ -6,7 +6,7 @@
 
 ## Todos
 
-- [] Add transition animations
-- [] Improve accessibility
-- [] Encapsulate more logic within the JS
-- [] Add testing
+- [ ] Add transition animations
+- [ ] Improve accessibility
+- [ ] Encapsulate more logic within the JS
+- [ ] Add testing
