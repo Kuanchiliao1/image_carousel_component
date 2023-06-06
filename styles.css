@@ -1,0 +1,72 @@
+html {box-sizing: border-box;}
+*, *::before, *::after {box-sizing: inherit;}
+
+body {
+  margin: 0px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  background-color: hsla(0, 0%, 0%, 0.627);
+}
+
+button:active {
+  background-color: red;
+}
+
+.img-container > * {
+  display: none;
+}
+
+.img-container > *.active {
+  display: block;
+  object-fit: cover;
+}
+
+.img-container {
+  display: flex;
+  max-height: 100%;
+}
+
+.carousel-container {
+  border: solid pink 5px;
+  min-width: min-content;
+  max-width: 30rem;
+  aspect-ratio: 1;
+  position: relative;
+  margin: 0 auto;
+}
+
+.carousel-container > * {
+  position: absolute;
+}
+
+.carousel-container > .arrow-right-btn,
+.carousel-container > .arrow-left-btn {
+  z-index: 10;
+  border: solid pink 5px;
+  height: 100%;
+  width: 20%;
+}
+
+.carousel-container > .arrow-right-btn {
+  right: 0;
+}
+
+.carousel-container > nav {
+  border: solid pink 5px;
+  width: 4rem;
+  height: 2rem;
+  z-index: 10;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+ul {
+  display: flex;
+}
