@@ -36,6 +36,15 @@ function nextPicture(direction) {
   setActiveBtn(newIndex)
 }
 
+
+// Auto advance
+// if any interaction with carousel btns happened in the last 5 secs, skip and reset time
+// if not, then move the picture every 5 seconds
+
+function startPicAutoAdvance() {
+  setInterval(() => nextPicture(1), 3000)
+}
+
 function bindEventListeners() {
   const imgRightBtn = document.querySelector('.arrow-right-btn')
   const imgLeftBtn = document.querySelector('.arrow-left-btn')
@@ -54,7 +63,6 @@ function bindEventListeners() {
       setActiveBtn(idx)
     })
   })
-  
 }
 
 bindEventListeners()
