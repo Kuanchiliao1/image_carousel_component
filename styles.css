@@ -3,7 +3,6 @@ html {box-sizing: border-box;}
 
 body {
   margin: 0px;
-  padding-top: 5rem;
 }
 
 img {
@@ -40,7 +39,7 @@ button:active {
 
 .carousel-container {
   min-width: min-content;
-  max-width: 30rem;
+  max-width: 100%;
   aspect-ratio: 16/9;
   position: relative;
   margin: 0 auto;
