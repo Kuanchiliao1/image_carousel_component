@@ -23,16 +23,19 @@ button:active {
 
 .img-container > * {
   object-fit: cover;
-  display: none;
+  opacity: 0;
 }
 
 .img-container > *.active {
-  display: block;
+  opacity: 1;
+  transition: opacity 500ms linear;
+  order: -1;
 }
 
 .img-container {
   display: flex;
   max-height: 100%;
+  overflow: hidden;
 }
 
 .carousel-container {
